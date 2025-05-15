@@ -46,6 +46,11 @@ public class StudentData {
         this.sleepHours = sleepHours;
         this.dietQuality = dietQuality;
         this.exerciseFrequency = exerciseFrequency;
+        this.parentalEducationLevel = parentalEducationLevel;
+        this.internetQuality = internetQuality;
+        this.mentalHealthRating = mentalHealthRating;
+        this.extracurricularParticipation = extracurricularParticipation;
+        this.examScore = examScore;
     }
 
 
