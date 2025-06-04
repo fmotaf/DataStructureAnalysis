@@ -1,6 +1,37 @@
-public class DoublyLinkedList {
+package main;
+
+import java.util.Iterator;
+
+public class DoubleLinkedList implements Iterable<Link> {
     private Link head;
     private Link tail;
+
+    private Iterator<Link> iterator;
+
+    public DoubleLinkedList() {
+        this.head = null;
+        this.tail = null;
+        this.iterator = iterator;
+    }
+
+    @Override
+    public Iterator<Link> iterator() {
+        return new Iterator<Link>() {
+            private Link current = head;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public Link next() {
+                Link temp = current;
+                current = current.getNext();
+                return temp;
+            }
+        };
+    }
 
     public void add(StudentData data) {
         Link newNode = new Link(data);
@@ -14,8 +45,9 @@ public class DoublyLinkedList {
     }
 
     public boolean removeById(String id) {
-        Link current = head;
-        while (current != null) {
+        Iterator<Link> it = this.iterator();
+        while (it.hasNext()) {
+            Link current = it.next();
             if (current.getData().getStudentId().equals(id)) {
                 if (current.getPrevious() != null) current.getPrevious().setNext(current.getNext());
                 else head = current.getNext();
@@ -23,7 +55,6 @@ public class DoublyLinkedList {
                 else tail = current.getPrevious();
                 return true;
             }
-            current = current.getNext();
         }
         return false;
     }
@@ -38,6 +69,18 @@ public class DoublyLinkedList {
         }
         return null;
     }
+
+    // Delete the last Node/Link in the list
+    public void delete(){
+        if (tail == null) return; // Lista vazia
+        if (tail.getPrevious() == null) { // Só um elemento
+            head = tail = null;
+        } else {
+            tail = tail.getPrevious();
+            tail.setNext(null);
+        }
+    }
+
 
     @Override
     public String toString() {
