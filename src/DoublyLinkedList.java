@@ -1,49 +1,57 @@
 public class DoublyLinkedList {
-    private TransactionNode head;
-    private TransactionNode tail;
+    private Link head;
+    private Link tail;
 
-    public void add(Transaction data) {
-        TransactionNode newNode = new TransactionNode(data);
+    public void add(StudentData data) {
+        Link newNode = new Link(data);
         if (head == null) {
             head = tail = newNode;
         } else {
-            tail.next = newNode;
-            newNode.prev = tail;
+            tail.setNext(newNode);
+            newNode.setPrevious(tail);
             tail = newNode;
         }
     }
 
     public boolean removeById(String id) {
-        TransactionNode current = head;
+        Link current = head;
         while (current != null) {
-            if (current.data.getId().equals(id)) {
-                if (current.prev != null) current.prev.next = current.next;
-                else head = current.next;
-                if (current.next != null) current.next.prev = current.prev;
-                else tail = current.prev;
+            if (current.getData().getStudentId().equals(id)) {
+                if (current.getPrevious() != null) current.getPrevious().setNext(current.getNext());
+                else head = current.getNext();
+                if (current.getNext() != null) current.getNext().setPrevious(current.getPrevious());
+                else tail = current.getPrevious();
                 return true;
             }
-            current = current.next;
+            current = current.getNext();
         }
         return false;
     }
 
-    public Transaction findById(String id) {
-        TransactionNode current = head;
+    public StudentData findById(String id) {
+        Link current = head;
         while (current != null) {
-            if (current.data.getId().equals(id)) {
-                return current.data;
+            if (current.getData().getStudentId().equals(id)) {
+                return current.getData();
             }
-            current = current.next;
+            current = current.getNext();
         }
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "DoublyLinkedList{" +
+                "head=" + head +
+                ", tail=" + tail +
+                '}';
+    }
+
     public void printAll() {
-        TransactionNode current = head;
+        Link current = head;
         while (current != null) {
-            System.out.println(current.data);
-            current = current.next;
+            System.out.println(current.getData());
+            current = current.getNext();
         }
     }
 }
