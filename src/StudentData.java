@@ -17,6 +17,27 @@ public class StudentData {
     private boolean extracurricularParticipation;
     private float examScore;
 
+    public StudentData(){
+        this(
+            null,
+            0,
+            null,
+            0,
+            0,
+            0,
+            false,
+            0,
+            0,
+            null,
+            0,
+            null,
+            null,
+            0,
+            false,
+            0
+        );
+    }
+
     public StudentData(
             String studentId,
             int age,
