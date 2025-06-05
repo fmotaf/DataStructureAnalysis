@@ -23,6 +23,18 @@ public class Main {
             System.out.println("Tempo para carregar: " + (endLoad - startLoad) + " ms");
             System.out.println("Total de registros carregados: " + count);
 
+            // Busca por um ID específico (ajuste conforme necessário)
+            String searchId = "S1";
+            long startSearch = System.currentTimeMillis();
+            StudentData found = list.findById(searchId);
+            long endSearch = System.currentTimeMillis();
+            if (found != null) {
+                System.out.println("Registro encontrado para ID " + searchId + ": " + found.getStudentId());
+            } else {
+                System.out.println("Registro não encontrado para ID " + searchId);
+            }
+            System.out.println("Tempo para buscar: " + (endSearch - startSearch) + " ms");
+
             long startDelete = System.currentTimeMillis();
             while (true) {
                 boolean hasElements = false;
