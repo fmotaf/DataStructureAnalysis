@@ -77,8 +77,6 @@ DoublyLinkedList.java: Lista duplamente encadeada com métodos insert, display, 
 
 Link.java: Representa cada nó com referências prev e next.
 
-CompareBy...: Classes que implementam Comparator<StudentData> para diferentes critérios.
-
 CSVReader.java: Lê o arquivo de dados e carrega os alunos na lista.
 
 Main.java: Responsável por orquestrar leitura, ordenação e medição de tempo.
