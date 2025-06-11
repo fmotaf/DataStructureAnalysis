@@ -84,18 +84,19 @@ Main.java: Responsável por orquestrar leitura, ordenação e medição de tempo
 
 ## 📈 Resultados da Execução:
 
-Sistema Operacional: Windows 10
-Processador: AMD Ryzen 7 5700U (8 núcleos, 16 threads)
-Memória RAM: 24 GB
+* Sistema Operacional: Windows 10
+* Processador: AMD Ryzen 7 5700U (8 núcleos, 16 threads)
+* Memória RAM: 24 GB
 ```
-Tempo para carregar: 109 ms
+Tempo para carregar: 124 ms
 Total de registros carregados: 11000
 Registro não encontrado para ID S1
-Tempo para buscar: 16 ms
-Tempo para deletar todos: 0 ms
-(BubbleSort) Tempo para ordenar por ID: 0.0054 ms
-(BubbleSort) Tempo para ordenar por idade: 0.0061 ms
-(BubbleSort) Tempo para ordenar por nota do exame: 0 ms
+Registro encontrado para ID S4888: S4888
+Tempo para buscar ID : S4888 igual a: 0.0 ms
+Tempo para deletar todos: 0.0 ms
+(BubbleSort) Tempo para ordenar por ID: 0.0041 ms
+(BubbleSort) Tempo para ordenar por idade: 0.0056 ms
+(BubbleSort) Tempo para ordenar por nota do exame: 0.0 ms
 ```
 
 
