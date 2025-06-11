@@ -13,7 +13,7 @@ DataStructureAnalysis/
 │
 ├── main/ # Classes que representam os dados
 │ └── StudentData.java # Classe com atributos do aluno (nome, idade, nota, etc)
-│ ├── Link.java # Nó da lista duplamente encadeada
+│ └── Link.java # Nó da lista duplamente encadeada
 │ └── DoublyLinkedList.java # Implementação da lista com métodos de ordenação
 │ └── CSVReader.java # Lê e carrega dados do arquivo CSV para a lista
 │ └── Main.java # Classe principal que executa a leitura, ordenação e medição de tempo
