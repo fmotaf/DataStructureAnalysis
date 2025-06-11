@@ -8,25 +8,21 @@ Projeto acadêmico em Java para análise de desempenho de estruturas de dados e 
 
 ```
 DataStructureAnalysis/
-├── data/ # Arquivos de entrada com dados dos estudantes (CSV, etc)
-│ └── students.csv # Base de dados de testes (nome, idade, nota, etc)
+├── dataSample/ # Arquivos de entrada com dados dos estudantes (CSV, etc)
+│ └── updated_student_habits_performance.csv # Base de dados de testes (nome, idade, nota, etc)
 │
-├── model/ # Classes que representam os dados
+├── main/ # Classes que representam os dados
 │ └── StudentData.java # Classe com atributos do aluno (nome, idade, nota, etc)
-│
-├── structure/ # Estrutura de dados personalizada
 │ ├── Link.java # Nó da lista duplamente encadeada
 │ └── DoublyLinkedList.java # Implementação da lista com métodos de ordenação
-│
-├── comparator/ # Comparadores para ordenação personalizada
-│ ├── CompareByAge.java # Ordena alunos por idade
-│ ├── CompareByGrade.java # Ordena alunos por nota
-│ └── CompareByName.java # Ordena alunos por nome
-│
-├── utils/ # Utilitários diversos
 │ └── CSVReader.java # Lê e carrega dados do arquivo CSV para a lista
+│ └── Main.java # Classe principal que executa a leitura, ordenação e medição de tempo
 │
-├── Main.java # Classe principal que executa a leitura, ordenação e medição de tempo
+├── test/ # Testes unitários
+│ └── TestCSVReader.java # Testes para a classe CSVReader (Verifica se os dados são lidos corretamente)
+│ └── TestDoubleLinkedList.java # Testes para a lista duplamente encadeada 
+│ └── TestSudentDataLoader.java # Testes para a classe StudentDataLoader (Verifica se os dados são carregados corretamente)
+│
 └── README.md # Documentação do projeto
 ```
 
