@@ -81,6 +81,60 @@ public class DoubleLinkedList implements Iterable<Link> {
         }
     }
 
+    // Ordena por studentId (String)
+    public void sortById() {
+        boolean swapped;
+        do {
+            swapped = false;
+            Link current = head;
+            while (current != null && current.getNext() != null) {
+                if (current.getData().getStudentId().compareTo(current.getNext().getData().getStudentId()) > 0) {
+                    StudentData temp = current.getData();
+                    current.setData(current.getNext().getData());
+                    current.getNext().setData(temp);
+                    swapped = true;
+                }
+                current = current.getNext();
+            }
+        } while (swapped);
+    }
+
+    // Ordena por idade (int)
+    public void sortByAge() {
+        boolean swapped;
+        do {
+            swapped = false;
+            Link current = head;
+            while (current != null && current.getNext() != null) {
+                if (current.getData().getAge() > current.getNext().getData().getAge()) {
+                    StudentData temp = current.getData();
+                    current.setData(current.getNext().getData());
+                    current.getNext().setData(temp);
+                    swapped = true;
+                }
+                current = current.getNext();
+            }
+        } while (swapped);
+    }
+
+    // Ordena por qualquer atributo usando Comparator<StudentData>
+    public void sort(java.util.Comparator<StudentData> comparator) {
+        boolean swapped;
+        do {
+            swapped = false;
+            Link current = head;
+            while (current != null && current.getNext() != null) {
+                if (comparator.compare(current.getData(), current.getNext().getData()) > 0) {
+                    StudentData temp = current.getData();
+                    current.setData(current.getNext().getData());
+                    current.getNext().setData(temp);
+                    swapped = true;
+                }
+                current = current.getNext();
+            }
+        } while (swapped);
+    }
+
 
     @Override
     public String toString() {

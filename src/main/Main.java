@@ -48,6 +48,25 @@ public class Main {
             long endDelete = System.currentTimeMillis();
             System.out.println("Tempo para deletar todos: " + (endDelete - startDelete) + " ms");
 
+            // Ordenar por ID
+            long startSortId = System.nanoTime();
+            list.sortById();
+            long endSortId = System.nanoTime();
+            System.out.println("(BubbleSort) Tempo para ordenar por ID: " + (endSortId - startSortId) / 1_000_000.0 + " ms");
+
+            // Ordenar por idade
+            long startSortAge = System.nanoTime();
+            list.sortByAge();
+            long endSortAge = System.nanoTime();
+            System.out.println("(BubbleSort) Tempo para ordenar por idade: " + (endSortAge - startSortAge) / 1_000_000.0 + " ms");
+
+            // Ordenar por nota do exame (exemplo de uso do Comparator)
+            long startSortExam = System.currentTimeMillis();
+            list.sort(java.util.Comparator.comparing(StudentData::getExamScore));
+            long endSortExam = System.currentTimeMillis();
+            System.out.println("(BubbleSort) Tempo para ordenar por nota do exame: " + (endSortExam - startSortExam) + " ms");
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
